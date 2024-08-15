@@ -9,6 +9,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { useThemeConfig } from '../core/hooks/use-theme-config';
 
@@ -51,7 +52,9 @@ function Providers({ children }: { children: React.ReactNode }) {
       style={styles.container}
       className={theme.dark ? `dark` : undefined}
     >
-      <ThemeProvider value={theme}>{children}</ThemeProvider>
+      <SafeAreaProvider>
+        <ThemeProvider value={theme}>{children}</ThemeProvider>
+      </SafeAreaProvider>
     </GestureHandlerRootView>
   );
 }
