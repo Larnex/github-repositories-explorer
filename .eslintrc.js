@@ -6,7 +6,6 @@ module.exports = {
       'error',
       {
         singleQuote: true,
-        endOfLine: 'auto',
       },
     ],
   },
@@ -33,7 +32,7 @@ module.exports = {
           'error',
           {
             singleQuote: true,
-            endOfLine: 'auto',
+            endOfLine: 'off',
           },
         ],
         'max-params': ['error', 3], // Limit the number of parameters in a function to use object instead

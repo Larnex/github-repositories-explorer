@@ -1,0 +1,10 @@
+flows:
+ - app/*
+
+excludeTags:
+ - util
+
+executionOrder:
+    continueOnFailure: false # default is true
+    flowsOrder:
+      - search-user
