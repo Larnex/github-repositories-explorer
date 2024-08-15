@@ -48,6 +48,7 @@ fs.rename(oldDirPath, newDirPath, (error) => {
   }
   console.log('/app moved to /app-example.');
 
+  // eslint-disable-next-line no-shadow
   fs.mkdir(newAppDirPath, { recursive: true }, (error) => {
     if (error) {
       return console.error(`Error creating new app directory: ${error}`);
@@ -55,6 +56,7 @@ fs.rename(oldDirPath, newDirPath, (error) => {
     console.log('New /app directory created.');
 
     const indexPath = path.join(newAppDirPath, 'index.tsx');
+    // eslint-disable-next-line no-shadow
     fs.writeFile(indexPath, indexContent, (error) => {
       if (error) {
         return console.error(`Error creating index.tsx: ${error}`);
@@ -62,6 +64,7 @@ fs.rename(oldDirPath, newDirPath, (error) => {
       console.log('app/index.tsx created.');
 
       const layoutPath = path.join(newAppDirPath, '_layout.tsx');
+      // eslint-disable-next-line no-shadow
       fs.writeFile(layoutPath, layoutContent, (error) => {
         if (error) {
           return console.error(`Error creating _layout.tsx: ${error}`);
