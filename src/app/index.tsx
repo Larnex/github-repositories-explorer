@@ -5,10 +5,7 @@ import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { z } from 'zod';
 
-import { Button } from '@/ui/button';
-
-import { FocusAwareStatusBar } from '../ui/focus-aware-status-bar';
-import { ControlledInput } from '../ui/input';
+import { Button, ControlledInput, FocusAwareStatusBar } from '@/ui';
 
 /* 
 May only contain alphanumeric characters or hyphens. 
