@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="8" failures="0" errors="0" time="3.521">
+  <testsuite name="src/ui/input.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-08-15T17:11:29" time="2.601" tests="8">
+    <testcase classname="Input component " name="renders correctly " time="0.599">
+    </testcase>
+    <testcase classname="Input component " name="should render the placeholder correctly " time="0.002">
+    </testcase>
+    <testcase classname="Input component " name="should render the error message correctly" time="0.004">
+    </testcase>
+    <testcase classname="Input component " name="should render the placeholder, error message &amp; placeholder correctly" time="0.002">
+    </testcase>
+    <testcase classname="Input component " name="should trigger onFocus event correctly " time="0.003">
+    </testcase>
+    <testcase classname="Input component " name="should trigger onBlur event correctly " time="0.003">
+    </testcase>
+    <testcase classname="Input component " name="should trigger onChangeText event correctly" time="0.002">
+    </testcase>
+    <testcase classname="Input component " name="should be disabled when disabled prop is true" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>

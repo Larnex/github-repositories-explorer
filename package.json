@@ -14,12 +14,10 @@
     "install-maestro": "curl -Ls 'https://get.maestro.mobile.dev' | bash",
     "e2e-test": "maestro test .maestro/"
   },
-  "jest": {
-    "preset": "jest-expo"
-  },
   "dependencies": {
     "@expo/metro-runtime": "^3.2.3",
     "@expo/vector-icons": "^14.0.2",
+    "@hookform/resolvers": "^3.9.0",
     "@react-navigation/native": "^6.0.2",
     "@tanstack/react-query": "^5.51.23",
     "expo": "~51.0.26",
@@ -35,6 +33,7 @@
     "octokit": "^4.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.52.2",
     "react-native": "0.74.5",
     "react-native-gesture-handler": "~2.16.1",
     "react-native-reanimated": "~3.10.1",
@@ -42,6 +41,7 @@
     "react-native-screens": "3.31.1",
     "react-native-web": "~0.19.10",
     "tailwind-variants": "^0.1.20",
+    "zod": "^3.23.8",
     "zustand": "^4.5.5"
   },
   "devDependencies": {
@@ -63,6 +63,7 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "jest": "^29.2.1",
     "jest-expo": "~51.0.3",
+    "jest-junit": "^16.0.0",
     "metro-babel-register": "^0.80.10",
     "prettier": "^2.8.8",
     "react-test-renderer": "18.2.0",

@@ -29,10 +29,10 @@ module.exports = {
       },
       rules: {
         'prettier/prettier': [
-          'error',
+          'warn',
           {
             singleQuote: true,
-            endOfLine: 'off',
+            endOfLine: 'auto',
           },
         ],
         'max-params': ['error', 3], // Limit the number of parameters in a function to use object instead
