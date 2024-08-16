@@ -85,6 +85,7 @@ export const Input = React.forwardRef<TextInput, NInputProps>((props, ref) => {
   return (
     <View className={styles.container()}>
       <NTextInput
+        enterKeyHint="search"
         testID={testID}
         ref={ref}
         placeholderTextColor={colors.neutral[900]}
