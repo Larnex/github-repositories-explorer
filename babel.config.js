@@ -6,6 +6,7 @@ module.exports = function (api) {
       'nativewind/babel',
     ],
     plugins: [
+      '@babel/plugin-transform-class-static-block',
       [
         'module-resolver',
         {
@@ -23,6 +24,7 @@ module.exports = function (api) {
             '.jsx',
             '.js',
             '.json',
+            '.mjs',
           ],
         },
       ],

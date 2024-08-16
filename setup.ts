@@ -5,4 +5,4 @@ global.window = {};
 global.window = global;
 
 import '@testing-library/jest-dom';
-jest.mock('zustand')
+jest.mock('zustand');

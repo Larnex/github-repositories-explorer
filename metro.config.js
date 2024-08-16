@@ -3,4 +3,13 @@ const { withNativeWind } = require('nativewind/metro');
 
 const config = getDefaultConfig(__dirname);
 
+config.resolver = {
+  ...config.resolver,
+  extraNodeModules: {
+    '@octokit/core': require.resolve('@octokit/core'),
+    '@octokit/types': require.resolve('@octokit/types'),
+    '@octokit/plugin-retry': require.resolve('@octokit/plugin-retry'),
+  },
+};
+
 module.exports = withNativeWind(config, { input: './global.css' });

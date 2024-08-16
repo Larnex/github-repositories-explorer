@@ -30,7 +30,7 @@
     "expo-system-ui": "~3.0.7",
     "expo-web-browser": "~13.0.3",
     "nativewind": "^4.0.36",
-    "octokit": "^4.0.2",
+    "octokit": "3.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.52.2",
@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@babel/plugin-transform-class-static-block": "^7.24.4",
     "@expo/config": "^9.0.3",
     "@react-native-community/eslint-config": "^3.2.0",
     "@testing-library/jest-dom": "^5.17.0",

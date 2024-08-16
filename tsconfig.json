@@ -16,5 +16,11 @@
     "android",
     "ios"
   ],
-  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "expo-env.d.ts",
+    "src/api/client.ts",
+    ".expo/types/**/*.ts"
+  ]
 }
