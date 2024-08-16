@@ -1,5 +1,5 @@
 export type Repo = {
   name: string;
-  stargarzers_count: number;
+  stargazers_count: number;
   description?: string;
 };

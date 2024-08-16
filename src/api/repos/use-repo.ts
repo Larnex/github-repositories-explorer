@@ -26,8 +26,6 @@ export const useRepos = ({ username }: FetchReposParams) => {
         page: pageParam,
       });
 
-      console.log('API Response:', response);
-
       if (response.data.length < LIMIT) {
         setMaxPage(pageParam);
       }
@@ -41,12 +39,11 @@ export const useRepos = ({ username }: FetchReposParams) => {
     }
   };
 
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, refetch } =
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading } =
     useInfiniteQuery({
       queryKey,
       queryFn: fetchRepos,
       getNextPageParam: (lastPage) => {
-        console.log('Determining next page from lastPage:', lastPage);
         return lastPage?.nextPage;
       },
       initialPageParam: page,
@@ -54,13 +51,11 @@ export const useRepos = ({ username }: FetchReposParams) => {
     });
 
   const flattenData = useMemo(() => {
-    console.log('Flattening data:', data);
     return data?.pages.flatMap((dataPage) => dataPage.data) || [];
   }, [data]);
 
   const loadNext = useCallback(() => {
     if (hasNextPage) {
-      console.log('Loading next page');
       incrementPage();
       fetchNextPage();
     }
@@ -70,6 +65,7 @@ export const useRepos = ({ username }: FetchReposParams) => {
     data: flattenData,
     fetchNextPage: loadNext,
     isFetchingNextPage,
-    refetch,
+    isLoading,
+    hasNextPage,
   };
 };
