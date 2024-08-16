@@ -8,18 +8,22 @@ import type { User } from './types';
 
 type Users = User[];
 
-type Variable = { username: string };
+type FetchUsersParams = { username: string };
 
 const LIMIT = 5;
 
 export const useUsers = ({
   username,
-}: Variable): UseQueryResult<Users, RequestError> => {
+}: FetchUsersParams): UseQueryResult<Users, RequestError> => {
   return useQuery<Users, RequestError>({
     queryKey: ['users', username],
     queryFn: async () => {
       const response = await client.request(
-        `GET /search/users?q=${username}&per_page=${LIMIT}`
+        `GET /search/users?q={username}&per_page={limit}`,
+        {
+          username,
+          limit: LIMIT,
+        }
       );
       return response.data.items;
     },
