@@ -7,7 +7,6 @@ config.resolver = {
   ...config.resolver,
   extraNodeModules: {
     '@octokit/core': require.resolve('@octokit/core'),
-    '@octokit/types': require.resolve('@octokit/types'),
     '@octokit/plugin-retry': require.resolve('@octokit/plugin-retry'),
   },
 };
