@@ -10,6 +10,8 @@ type Users = User[];
 
 type Variable = { username: string };
 
+const LIMIT = 5;
+
 export const useUsers = ({
   username,
 }: Variable): UseQueryResult<Users, RequestError> => {
@@ -17,7 +19,7 @@ export const useUsers = ({
     queryKey: ['users', username],
     queryFn: async () => {
       const response = await client.request(
-        `GET /search/users?q=${username}&per_page=5`
+        `GET /search/users?q=${username}&per_page=${LIMIT}`
       );
       return response.data.items;
     },
