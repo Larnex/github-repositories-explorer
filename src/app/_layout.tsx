@@ -11,6 +11,7 @@ import { StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import { APIProvider } from '../api/api-provider';
 import { useThemeConfig } from '../core/hooks/use-theme-config';
 
 export { ErrorBoundary } from 'expo-router';
@@ -46,14 +47,15 @@ export default function RootLayout() {
 function Providers({ children }: { children: React.ReactNode }) {
   const theme = useThemeConfig();
 
-  // TODO: Add: API Provider
   return (
     <GestureHandlerRootView
       style={styles.container}
       className={theme.dark ? `dark` : undefined}
     >
       <SafeAreaProvider>
-        <ThemeProvider value={theme}>{children}</ThemeProvider>
+        <APIProvider>
+          <ThemeProvider value={theme}>{children}</ThemeProvider>
+        </APIProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );
