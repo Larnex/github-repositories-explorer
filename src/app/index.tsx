@@ -50,7 +50,6 @@ export default function HomeScreen() {
 
   const { data, isLoading, isError, error } = useUsers({ username });
 
-  // TODO: Trigger onSubmit when user presses enter
   const onSubmit = (formData: FormData) => {
     setUsername(formData.username);
   };
@@ -67,8 +66,9 @@ export default function HomeScreen() {
           <ControlledInput
             placeholder="Enter username"
             control={control}
-            className="border-b border-gray-200"
             name="username"
+            onSubmitEditing={handleSubmit(onSubmit)}
+            enterKeyHint="search"
             error={
               isError && error instanceof Error
                 ? error.message

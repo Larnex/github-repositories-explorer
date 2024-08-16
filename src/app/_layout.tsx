@@ -1,7 +1,6 @@
 import 'react-native-reanimated';
 import '../../global.css';
 
-import { ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -12,7 +11,6 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { APIProvider } from '../api/api-provider';
-import { useThemeConfig } from '../core/hooks/use-theme-config';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -45,17 +43,10 @@ export default function RootLayout() {
 }
 
 function Providers({ children }: { children: React.ReactNode }) {
-  const theme = useThemeConfig();
-
   return (
-    <GestureHandlerRootView
-      style={styles.container}
-      className={theme.dark ? `dark` : undefined}
-    >
+    <GestureHandlerRootView style={styles.container}>
       <SafeAreaProvider>
-        <APIProvider>
-          <ThemeProvider value={theme}>{children}</ThemeProvider>
-        </APIProvider>
+        <APIProvider>{children}</APIProvider>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

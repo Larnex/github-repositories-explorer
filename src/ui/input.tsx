@@ -16,8 +16,7 @@ import colors from './nativewind-colors';
 const inputTv = tv({
   slots: {
     container: 'mb-4',
-    input:
-      'font-inter mt-0 rounded-xl border-[0.5px] border-neutral-300 bg-neutral-100 px-4 py-3 text-base font-medium leading-5 dark:border-neutral-700 dark:bg-neutral-800 dark:text-white',
+    input: ' bg-neutral-100 p-4 text-xl leading-5 shadow-md shadow-black',
   },
 
   variants: {
@@ -85,7 +84,6 @@ export const Input = React.forwardRef<TextInput, NInputProps>((props, ref) => {
   return (
     <View className={styles.container()}>
       <NTextInput
-        enterKeyHint="search"
         testID={testID}
         ref={ref}
         placeholderTextColor={colors.neutral[900]}
