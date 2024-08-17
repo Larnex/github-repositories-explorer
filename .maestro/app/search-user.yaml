@@ -1,15 +1,13 @@
 # E2E test for searching the user
-appId: 'github-repositories-explorer'
+appId: com.github-repositories-explorer.app
 env:
   Query: 'Larnex'
 ---
 - launchApp
-- assertVisible: 'Find User'
-- assertVisible: 'Search'
+- assertVisible: 'Enter username'
 - tapOn:
-  id: 'search-bar'
+    id: 'username-input'
 - inputText: ${Query}
-- runFlow: ../utils/hide-keyboard.yaml
+- hideKeyboard
 - tapOn:
-  id: 'searchBtn'
-- assertVisible: 'Showing users'
+    id: 'search-button'

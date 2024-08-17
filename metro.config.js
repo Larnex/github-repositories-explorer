@@ -11,4 +11,6 @@ config.resolver = {
   },
 };
 
+config.resolver.blockList = [/(.*.test.tsx?)$/];
+
 module.exports = withNativeWind(config, { input: './global.css' });
