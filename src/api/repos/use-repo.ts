@@ -1,7 +1,8 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { useCallback, useMemo } from 'react';
 
-import { usePageStore } from '../../stores';
+import { usePageStore } from '@/stores';
+
 import { client } from '../client';
 
 type FetchReposParams = {

@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="8" failures="0" errors="0" time="2.719">
-  <testsuite name="src/ui/input.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-08-15T17:14:01" time="1.844" tests="8">
-    <testcase classname="Input component " name="renders correctly " time="0.693">
+<testsuites name="jest tests" tests="4" failures="0" errors="0" time="3.251">
+  <testsuite name="src/components/collapsible.test.tsx" errors="0" failures="0" skipped="0" timestamp="2024-08-16T22:31:57" time="2.393" tests="4">
+    <testcase classname="Collapsible Component" name="renders correctly with initial state" time="0.479">
     </testcase>
-    <testcase classname="Input component " name="should render the placeholder correctly " time="0.004">
+    <testcase classname="Collapsible Component" name="toggles the collapsible and fetches data" time="0.082">
     </testcase>
-    <testcase classname="Input component " name="should render the error message correctly" time="0.003">
+    <testcase classname="Collapsible Component" name="shows empty list message when no repositories are found" time="0.017">
     </testcase>
-    <testcase classname="Input component " name="should render the placeholder, error message &amp; placeholder correctly" time="0.002">
-    </testcase>
-    <testcase classname="Input component " name="should trigger onFocus event correctly " time="0.002">
-    </testcase>
-    <testcase classname="Input component " name="should trigger onBlur event correctly " time="0.001">
-    </testcase>
-    <testcase classname="Input component " name="should trigger onChangeText event correctly" time="0.002">
-    </testcase>
-    <testcase classname="Input component " name="should be disabled when disabled prop is true" time="0.002">
+    <testcase classname="Collapsible Component" name="does not show load more button when no more pages" time="0.011">
     </testcase>
   </testsuite>
 </testsuites>
