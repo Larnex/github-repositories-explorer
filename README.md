@@ -1,50 +1,96 @@
-# Welcome to your Expo app 👋
+# GitHub Repositories Explorer
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This project is a React Native application that allows users to search for GitHub users and explore their repositories. It provides a user-friendly interface to view user profiles and repository details.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Search for GitHub users
+- View user profiles with avatars
+- Explore user repositories
+- Load more repositories on demand
+- Responsive design with Tailwind CSS
 
-   ```bash
-   npm install
-   ```
+## Tech Stack
 
-2. Start the app
+- React Native
+- Expo
+- TypeScript
+- React Query for data fetching and caching
+- Zustand for state management
+- React Hook Form for form handling
+- Zod for schema validation
+- Tailwind CSS for styling
+- Jest for testing
 
-   ```bash
-    npx expo start
-   ```
+## Project Structure
 
-In the output, you'll find options to open the app in a
+The project follows a modular structure:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- `src/`
+  - `api/`: API-related code and hooks
+  - `components/`: Reusable React components
+  - `stores/`: Zustand store
+  - `ui/`: UI components and utilities
+  - `app/`: Main application screen and layout
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Setup and Installation
 
-## Get a fresh project
+1. Clone the repository
+2. Install dependencies:
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+yarn install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Running the App
 
-## Learn more
+To start the development server:
 
-To learn more about developing your project with Expo, look at the following resources:
+```
+yarn start
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Testing
 
-## Join the community
+Run tests using Jest:
 
-Join our community of developers creating universal apps.
+```
+yarn test
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Run E2E test using Maestro:
+
+```
+yarn e2e-test
+```
+
+## Key Components
+
+### Home Screen (`index.tsx`)
+
+The main screen where users can search for GitHub users and view results.
+
+### Collapsible Component (`collapsible.tsx`)
+
+Displays user information and allows expanding to show repositories.
+
+### API Hooks
+
+- `useUsers`: Fetches GitHub user data
+- `useRepos`: Fetches repository data for a specific user
+
+### UI Components
+
+- `Button`: Customizable button component
+- `Input`: Form input component with error handling
+- `EmptyList`: Displays when no data is available
+
+## State Management
+
+- Uses Zustand for managing pagination state
+- React Query for server state management and caching
+
+## Styling
+
+- Utilizes Tailwind CSS for responsive and customizable styling
+- Custom color palette defined in `nativewind-colors.js`

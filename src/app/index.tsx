@@ -7,10 +7,9 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import * as z from 'zod';
 
 import type { User } from '@/api/users';
-import { useUsers } from '@/api/users/use-user';
+import { useUsers } from '@/api/users';
+import { Collapsible } from '@/components';
 import { Button, ControlledInput, EmptyList, FocusAwareStatusBar } from '@/ui';
-
-import { Collapsible } from '../components/collapsible';
 
 /* 
 May only contain alphanumeric characters or hyphens. 

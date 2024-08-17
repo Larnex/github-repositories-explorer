@@ -10,7 +10,7 @@ import { StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { APIProvider } from '../api/api-provider';
+import { APIProvider } from '@/api';
 
 export { ErrorBoundary } from 'expo-router';
 
