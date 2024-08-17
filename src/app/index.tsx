@@ -2,7 +2,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { FlatList, ScrollView, View } from 'react-native';
+import { FlatList, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as z from 'zod';
 
@@ -67,6 +67,7 @@ export default function HomeScreen() {
             placeholder="Enter username"
             control={control}
             name="username"
+            testID="username-input"
             onSubmitEditing={handleSubmit(onSubmit)}
             enterKeyHint="search"
             error={
@@ -84,15 +85,27 @@ export default function HomeScreen() {
             onPress={handleSubmit(onSubmit)}
             disabled={!isValid}
             loading={isLoading}
+            testID="search-button"
           />
 
           {data && (
-            <FlatList
-              data={data}
-              scrollEnabled={false}
-              renderItem={renderItem}
-              keyExtractor={(item) => item.id.toString()}
-            />
+            <View>
+              <Text
+                className="
+                my-4
+                text-lg
+                font-medium
+                text-gray-900"
+              >
+                Showing users by query: {username}
+              </Text>
+              <FlatList
+                data={data}
+                scrollEnabled={false}
+                renderItem={renderItem}
+                keyExtractor={(item) => item.id.toString()}
+              />
+            </View>
           )}
 
           {data && data.length === 0 && (

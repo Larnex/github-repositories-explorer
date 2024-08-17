@@ -16,7 +16,7 @@ import colors from './nativewind-colors';
 const inputTv = tv({
   slots: {
     container: 'mb-4',
-    input: ' bg-neutral-100 p-4 text-xl leading-5 shadow-md shadow-black',
+    input: ' bg-neutral-100 p-4 text-xl leading-5 shadow-md shadow-neutral-400',
   },
 
   variants: {

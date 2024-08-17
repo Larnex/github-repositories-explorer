@@ -9,14 +9,16 @@ type NoDataProps = {
 
 type Props = {
   isLoading: boolean;
+  testID?: string;
   message?: string;
 } & NoDataProps;
 
 export const EmptyList = React.memo(
-  ({ isLoading, height = 200, width = 200, message }: Props) => {
+  ({ isLoading, height = 200, width = 200, message, testID }: Props) => {
     return (
       <View
         className={`min-h-[${height * 2}px] mt-5 items-center justify-center`}
+        testID={testID}
       >
         {!isLoading ? (
           <View className="items-center">

@@ -46,6 +46,7 @@ export function Collapsible({
     return (
       <View className="py-50 my-5 flex-row items-center justify-center gap-5 space-x-4">
         <Button
+          testID="load-more-button"
           onPress={fetchNextPage}
           label={`Load more from user ${login}`}
           className=" bg-black p-5"
@@ -72,13 +73,18 @@ export function Collapsible({
       >
         <View className="flex-row items-center gap-5 space-x-4">
           <Image
+            testID="user-avatar"
             source={{ uri: avatar_url }}
             className="h-10 w-10 rounded-full"
           />
           <Text className="text-lg font-medium text-gray-900">{login}</Text>
         </View>
         {isLoading || isFetchingNextPage ? (
-          <ActivityIndicator size="small" color={colors.black} />
+          <ActivityIndicator
+            size="small"
+            color={colors.black}
+            testID="loading-indicator"
+          />
         ) : (
           <Ionicons
             name={openUsername === login ? 'chevron-down' : 'chevron-forward'}
@@ -96,6 +102,7 @@ export function Collapsible({
             renderItem={renderItem}
             ListEmptyComponent={
               <EmptyList
+                testID="empty-list"
                 isLoading={isLoading}
                 height={100}
                 width={100}
